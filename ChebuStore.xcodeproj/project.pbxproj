@@ -15,6 +15,12 @@
 		468E21E72BD163C900F0C606 /* ChebuStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E21E62BD163C900F0C606 /* ChebuStoreTests.swift */; };
 		468E21F12BD163C900F0C606 /* ChebuStoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E21F02BD163C900F0C606 /* ChebuStoreUITests.swift */; };
 		468E21F32BD163C900F0C606 /* ChebuStoreUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E21F22BD163C900F0C606 /* ChebuStoreUITestsLaunchTests.swift */; };
+		468E22092BD1660500F0C606 /* ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E22082BD1660500F0C606 /* ItemsView.swift */; };
+		468E220B2BD1661800F0C606 /* ItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E220A2BD1661700F0C606 /* ItemsViewModel.swift */; };
+		468E220D2BD16C0700F0C606 /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 468E220C2BD16C0700F0C606 /* Documentation.docc */; };
+		468E22112BD16FA500F0C606 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E22102BD16FA500F0C606 /* ItemView.swift */; };
+		468E22132BD19CE000F0C606 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E22122BD19CE000F0C606 /* ItemDetailView.swift */; };
+		468E22152BD1A63700F0C606 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E22142BD1A63700F0C606 /* ItemModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +52,13 @@
 		468E21EC2BD163C900F0C606 /* ChebuStoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChebuStoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		468E21F02BD163C900F0C606 /* ChebuStoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChebuStoreUITests.swift; sourceTree = "<group>"; };
 		468E21F22BD163C900F0C606 /* ChebuStoreUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChebuStoreUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		468E22082BD1660500F0C606 /* ItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsView.swift; sourceTree = "<group>"; };
+		468E220A2BD1661700F0C606 /* ItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModel.swift; sourceTree = "<group>"; };
+		468E220C2BD16C0700F0C606 /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
+		468E220E2BD16C2D00F0C606 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		468E22102BD16FA500F0C606 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		468E22122BD19CE000F0C606 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		468E22142BD1A63700F0C606 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +89,8 @@
 		468E21C72BD163C800F0C606 = {
 			isa = PBXGroup;
 			children = (
+				468E220E2BD16C2D00F0C606 /* Playground.playground */,
+				468E220C2BD16C0700F0C606 /* Documentation.docc */,
 				468E21D22BD163C800F0C606 /* ChebuStore */,
 				468E21E52BD163C900F0C606 /* ChebuStoreTests */,
 				468E21EF2BD163C900F0C606 /* ChebuStoreUITests */,
@@ -96,6 +111,9 @@
 		468E21D22BD163C800F0C606 /* ChebuStore */ = {
 			isa = PBXGroup;
 			children = (
+				468E21FF2BD1648800F0C606 /* App */,
+				468E22022BD1651300F0C606 /* Shared */,
+				468E22002BD1648D00F0C606 /* Feature */,
 				468E21D32BD163C800F0C606 /* ChebuStoreApp.swift */,
 				468E21D52BD163C800F0C606 /* ContentView.swift */,
 				468E21D72BD163C800F0C606 /* Item.swift */,
@@ -128,6 +146,80 @@
 				468E21F22BD163C900F0C606 /* ChebuStoreUITestsLaunchTests.swift */,
 			);
 			path = ChebuStoreUITests;
+			sourceTree = "<group>";
+		};
+		468E21FF2BD1648800F0C606 /* App */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		468E22002BD1648D00F0C606 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				468E22042BD1658700F0C606 /* Item */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		468E22012BD1649300F0C606 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		468E22022BD1651300F0C606 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				468E22032BD1652600F0C606 /* UI */,
+				468E22012BD1649300F0C606 /* Services */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		468E22032BD1652600F0C606 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		468E22042BD1658700F0C606 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				468E22062BD165A000F0C606 /* View */,
+				468E22072BD165A300F0C606 /* ViewModel */,
+				468E22052BD1659C00F0C606 /* Model */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		468E22052BD1659C00F0C606 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				468E22142BD1A63700F0C606 /* ItemModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		468E22062BD165A000F0C606 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				468E22082BD1660500F0C606 /* ItemsView.swift */,
+				468E22102BD16FA500F0C606 /* ItemView.swift */,
+				468E22122BD19CE000F0C606 /* ItemDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		468E22072BD165A300F0C606 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				468E220A2BD1661700F0C606 /* ItemsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,9 +352,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				468E220B2BD1661800F0C606 /* ItemsViewModel.swift in Sources */,
+				468E22152BD1A63700F0C606 /* ItemModel.swift in Sources */,
+				468E220D2BD16C0700F0C606 /* Documentation.docc in Sources */,
 				468E21D62BD163C800F0C606 /* ContentView.swift in Sources */,
 				468E21D82BD163C800F0C606 /* Item.swift in Sources */,
+				468E22132BD19CE000F0C606 /* ItemDetailView.swift in Sources */,
+				468E22112BD16FA500F0C606 /* ItemView.swift in Sources */,
 				468E21D42BD163C800F0C606 /* ChebuStoreApp.swift in Sources */,
+				468E22092BD1660500F0C606 /* ItemsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
