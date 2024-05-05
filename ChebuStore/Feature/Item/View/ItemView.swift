@@ -10,7 +10,6 @@ import SwiftUI
 struct ItemView: View {
 	
 	let item: ItemModel
-	
 	let size: CGSize
 	
 	var body: some View {
@@ -63,10 +62,8 @@ struct PhotoTabView: View {
 		}
 		.tabViewStyle(PageTabViewStyle())
 		.indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .never))
-		.frame(
-			idealWidth: size.width / 2.25,
-			
-			idealHeight: size.width / 2.25)
+		.frame(idealWidth: size.width / 2.25,
+			   idealHeight: size.width / 2.25)
 		.clipShape(RoundedRectangle(cornerRadius: 20))
 	}
 }

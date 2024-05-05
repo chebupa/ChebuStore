@@ -12,29 +12,60 @@ struct ItemsView: View {
 	let columns: [GridItem] = [GridItem(), GridItem()]
 	
 	@State private var searchText: String = ""
+	@State private var qrScannerIsShown: Bool = false
 	
     var body: some View {
-		GeometryReader { proxy in
-			let size = proxy.size
-			
-			ScrollView {
-				LazyVGrid(columns: columns, spacing: 10) {
-					ItemView(item: ItemModel(itemName: "iPhone 14 Pro",
-											 itemPrice: 990.0,
-											 itemImage: "iphone14proImage"),
-							 size: size)
-					ItemView(item: ItemModel(itemName: "iPhone 14 Pro",
-											 itemPrice: 990.0,
-											 itemImage: "iphone14proImage"),
-							 size: size)
-					ItemView(item: ItemModel(itemName: "iPhone 14 Pro",
-											 itemPrice: 990.0,
-											 itemImage: "iphone14proImage"),
-							 size: size)
+		NavigationStack {
+			GeometryReader { proxy in
+				let size = proxy.size
+				
+				ScrollView {
+					AdSliderView(size: size)
+					
+					LazyVGrid(columns: columns, spacing: 10) {
+						ItemView(item: ItemModel(itemName: "iPhone 14 Pro",
+												 itemPrice: 990.0,
+												 itemImage: "iphone14proImage"),
+								 size: size)
+						ItemView(item: ItemModel(itemName: "iPhone 14 Pro",
+												 itemPrice: 990.0,
+												 itemImage: "iphone14proImage"),
+								 size: size)
+						ItemView(item: ItemModel(itemName: "iPhone 14 Pro",
+												 itemPrice: 990.0,
+												 itemImage: "iphone14proImage"),
+								 size: size)
+						ItemView(item: ItemModel(itemName: "iPhone 14 Pro",
+												 itemPrice: 990.0,
+												 itemImage: "iphone14proImage"),
+								 size: size)
+						ItemView(item: ItemModel(itemName: "iPhone 14 Pro",
+												 itemPrice: 990.0,
+												 itemImage: "iphone14proImage"),
+								 size: size)
+						ItemView(item: ItemModel(itemName: "iPhone 14 Pro",
+												 itemPrice: 990.0,
+												 itemImage: "iphone14proImage"),
+								 size: size)
+					}
+					.padding()
 				}
-				.padding()
+				.toolbar {
+					ToolbarItem {
+						Button("Scan QR", systemImage: "barcode.viewfinder") {
+							qrScannerIsShown.toggle()
+						}
+					}
+				}
+				.sheet(isPresented: $qrScannerIsShown) {
+					QRScannerView(isPresented: $qrScannerIsShown)
+//						.presentationDragIndicator(.visible)
+						.presentationDetents([.medium])
+				}
+				.searchable(text: $searchText,
+							placement: .navigationBarDrawer(displayMode: .always))
 			}
-			.searchable(text: $searchText)
+			.navigationTitle("🛍️ Shop")
 		}
     }
 }

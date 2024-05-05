@@ -30,8 +30,8 @@ struct ItemDetailView: View {
 					height: size.width)
 			}
 		}
-//		.background(.blue)
 		.navigationTitle(item.itemName)
+		.navigationBarTitleDisplayMode(.inline)
     }
 }
 

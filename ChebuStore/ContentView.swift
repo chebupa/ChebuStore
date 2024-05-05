@@ -8,16 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+	
+	@State private var selection: TabViewRouter?
+	
 	var body: some View {
-		TabView {
-			NavigationStack {
-				ItemsView()
-					.navigationTitle("🛍️ Shop")
-			}
-			.tabItem {
-				Label("Shop", systemImage: "storefront")
-			}
-		}
+		AppTabView(tabViewSelection: $selection)
 	}
 }
 
