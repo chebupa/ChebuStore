@@ -6,46 +6,44 @@
 //
 
 import SwiftUI
+import Observation
 
 struct ItemsView: View {
 	
-	let columns: [GridItem] = [GridItem(), GridItem()]
-	
-	@State private var searchText: String = ""
-	@State private var qrScannerIsShown: Bool = false
+	@State private var VM = ItemsViewModel()
 	
     var body: some View {
-		NavigationStack {
+		NavigationStack(path: $VM.navPath) {
 			GeometryReader { proxy in
 				let size = proxy.size
 				
 				ScrollView {
 					AdSliderView(size: size)
 					
-					LazyVGrid(columns: columns, spacing: 10) {
+					LazyVGrid(columns: VM.columns, spacing: 10) {
+						ItemView(item: ItemModel(itemName: "Chebupa",
+												 itemPrice: 990,
+												 itemImage: "chebupaImage"),
+								 size: size)
 						ItemView(item: ItemModel(itemName: "iPhone 14 Pro",
-												 itemPrice: 990.0,
+												 itemPrice: 990,
 												 itemImage: "iphone14proImage"),
 								 size: size)
 						ItemView(item: ItemModel(itemName: "iPhone 14 Pro",
-												 itemPrice: 990.0,
+												 itemPrice: 990,
 												 itemImage: "iphone14proImage"),
 								 size: size)
 						ItemView(item: ItemModel(itemName: "iPhone 14 Pro",
-												 itemPrice: 990.0,
+												 itemPrice: 990,
 												 itemImage: "iphone14proImage"),
 								 size: size)
 						ItemView(item: ItemModel(itemName: "iPhone 14 Pro",
-												 itemPrice: 990.0,
+												 itemPrice: 990,
 												 itemImage: "iphone14proImage"),
 								 size: size)
-						ItemView(item: ItemModel(itemName: "iPhone 14 Pro",
-												 itemPrice: 990.0,
-												 itemImage: "iphone14proImage"),
-								 size: size)
-						ItemView(item: ItemModel(itemName: "iPhone 14 Pro",
-												 itemPrice: 990.0,
-												 itemImage: "iphone14proImage"),
+						ItemView(item: ItemModel(itemName: "Chebupa",
+												 itemPrice: 990,
+												 itemImage: "chebupaImage"),
 								 size: size)
 					}
 					.padding()
@@ -53,23 +51,70 @@ struct ItemsView: View {
 				.toolbar {
 					ToolbarItem {
 						Button("Scan QR", systemImage: "barcode.viewfinder") {
-							qrScannerIsShown.toggle()
+							VM.qrScannerIsShown.toggle()
 						}
 					}
 				}
-				.sheet(isPresented: $qrScannerIsShown) {
-					QRScannerView(isPresented: $qrScannerIsShown)
-//						.presentationDragIndicator(.visible)
+				.sheet(isPresented: $VM.qrScannerIsShown) {
+					QRScannerView(isPresented: $VM.qrScannerIsShown)
 						.presentationDetents([.medium])
 				}
-				.searchable(text: $searchText,
+				.searchable(text: $VM.searchText,
 							placement: .navigationBarDrawer(displayMode: .always))
 			}
 			.navigationTitle("🛍️ Shop")
+			.navigationDestination(for: ItemModel.self) { selection in
+				BottomBarContainer(mainContent: ItemDetailView(item: selection.self),
+								   bottomContent: BottomButtonView(text: "Add to cart",
+																   image: "cart",
+																   action: { print("") }
+																  ))
+			}
 		}
+		.environment(VM)
     }
 }
 
 #Preview {
-    ItemsView()
+    ContentView()
+}
+
+// MARK: - BottomButtonView
+struct BottomButtonView: View {
+	
+	@State private var VM: BottomButtonViewModel = BottomButtonViewModel()
+	
+	public let text: String
+	public let image: String
+	public var action: () -> Void?
+	
+	var body: some View {
+		Button(text, systemImage: image) {
+			action()
+		}
+		.buttonStyle(BorderedProminentButtonStyle())
+		.frame(maxWidth: .infinity)
+		.background(.blue)
+		.padding(.bottom, 1)
+		.offset(x: 0, y: VM.viewDidLoad ? 0 : 1000)
+		.opacity(VM.viewDidLoad ? 1 : 0)
+		.onAppear {
+			withAnimation(.snappy(extraBounce: 0.1).delay(0.45)) {
+				VM.viewDidLoad = true
+			}
+		}
+		.onDisappear {
+			VM.viewDidLoad = false
+		}
+	}
+}
+
+@Observable
+final class BottomButtonViewModel {
+	
+	var viewDidLoad: Bool
+	
+	init(viewDidLoad: Bool = false) {
+		self.viewDidLoad = viewDidLoad
+	}
 }

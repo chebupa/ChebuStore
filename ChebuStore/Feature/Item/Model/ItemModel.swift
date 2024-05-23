@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct ItemModel {
+struct ItemModel: Hashable {
 	
 	let itemName: String
-	let itemPrice: Double
+	let itemPrice: Int
 	
 	let itemImage: String
 }

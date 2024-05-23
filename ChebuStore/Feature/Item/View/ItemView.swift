@@ -9,31 +9,34 @@ import SwiftUI
 
 struct ItemView: View {
 	
+	@Environment(ItemsViewModel.self) private var VM
+	
 	let item: ItemModel
 	let size: CGSize
 	
 	var body: some View {
 		VStack {
-			PhotoTabView(size: size)
+			PhotoTabView(item: item, size: size)
 			
-			NavigationLink(destination: ItemDetailView(item: item)) {
-				VStack {
-					Text(item.itemName)
-						.frame(maxWidth: size.width / 2, alignment: .leading)
-						.padding(.leading)
-						.font(.system(.headline, weight: .bold))
-						.lineLimit(1)
-					
-					Text("$ \(item.itemPrice)")
-						.frame(maxWidth: size.width / 2, alignment: .leading)
-						.padding(.leading)
-						.font(.footnote)
-				}
+			VStack {
+				Text(item.itemName)
+					.frame(maxWidth: size.width / 2, alignment: .leading)
+					.padding(.leading)
+					.font(.system(.headline, weight: .bold))
+					.lineLimit(1)
+				
+				Text("$ \(item.itemPrice)")
+					.frame(maxWidth: size.width / 2, alignment: .leading)
+					.padding(.leading)
+					.font(.footnote)
 			}
 		}
 		.padding(.bottom)
 		.background(.lightgray)
 		.clipShape(RoundedRectangle(cornerRadius: 20))
+		.onTapGesture {
+			VM.navPath.append(item)
+		}
 	}
 }
 
@@ -42,7 +45,7 @@ struct ItemView: View {
 		let size = proxy.size
 		
 		ItemView(item: ItemModel(itemName: "iPhone 14 Pro",
-								 itemPrice: 990.0,
+								 itemPrice: 990,
 								 itemImage: "iphone14proImage"),
 				 size: size)
 	}
@@ -51,12 +54,13 @@ struct ItemView: View {
 // MARK: - PhotoTabView
 struct PhotoTabView: View {
 	
+	let item: ItemModel
 	let size: CGSize
 	
 	var body: some View {
 		TabView {
 			ForEach(1..<4) { _ in
-				Image("iphone14proImage")
+				Image(item.itemImage)
 					.resizable(resizingMode: .stretch)
 			}
 		}

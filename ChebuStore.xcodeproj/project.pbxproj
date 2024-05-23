@@ -14,6 +14,8 @@
 		464E08AD2BE7BA4B00A715E5 /* CartScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464E08AC2BE7BA4B00A715E5 /* CartScreenView.swift */; };
 		464E08B32BE7BCD000A715E5 /* ShopMapScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464E08B22BE7BCD000A715E5 /* ShopMapScreenView.swift */; };
 		464E08B62BE7C4EE00A715E5 /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464E08B52BE7C4EE00A715E5 /* QRScannerView.swift */; };
+		467600202BF5494800368A7E /* BottomBarContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4676001F2BF5494800368A7E /* BottomBarContainer.swift */; };
+		467600232BF54B2800368A7E /* CustomViewDidLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467600222BF54B2800368A7E /* CustomViewDidLoad.swift */; };
 		468E21D42BD163C800F0C606 /* ChebuStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E21D32BD163C800F0C606 /* ChebuStoreApp.swift */; };
 		468E21D62BD163C800F0C606 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E21D52BD163C800F0C606 /* ContentView.swift */; };
 		468E21D82BD163C800F0C606 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E21D72BD163C800F0C606 /* Item.swift */; };
@@ -55,6 +57,8 @@
 		464E08AC2BE7BA4B00A715E5 /* CartScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartScreenView.swift; sourceTree = "<group>"; };
 		464E08B22BE7BCD000A715E5 /* ShopMapScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopMapScreenView.swift; sourceTree = "<group>"; };
 		464E08B52BE7C4EE00A715E5 /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
+		4676001F2BF5494800368A7E /* BottomBarContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarContainer.swift; sourceTree = "<group>"; };
+		467600222BF54B2800368A7E /* CustomViewDidLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewDidLoad.swift; sourceTree = "<group>"; };
 		468E21D02BD163C800F0C606 /* ChebuStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChebuStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		468E21D32BD163C800F0C606 /* ChebuStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChebuStoreApp.swift; sourceTree = "<group>"; };
 		468E21D52BD163C800F0C606 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -213,6 +217,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		467600212BF54B1600368A7E /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				467600222BF54B2800368A7E /* CustomViewDidLoad.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		468E21C72BD163C800F0C606 = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +316,7 @@
 		468E22022BD1651300F0C606 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				467600212BF54B1600368A7E /* Tools */,
 				468E22032BD1652600F0C606 /* UI */,
 				468E22012BD1649300F0C606 /* Services */,
 			);
@@ -314,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				464E08B52BE7C4EE00A715E5 /* QRScannerView.swift */,
+				4676001F2BF5494800368A7E /* BottomBarContainer.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -493,10 +507,12 @@
 				468E21D82BD163C800F0C606 /* Item.swift in Sources */,
 				464E08B62BE7C4EE00A715E5 /* QRScannerView.swift in Sources */,
 				468E22132BD19CE000F0C606 /* ItemDetailView.swift in Sources */,
+				467600202BF5494800368A7E /* BottomBarContainer.swift in Sources */,
 				464E08A72BE7B4FE00A715E5 /* TabViewRouter.swift in Sources */,
 				464E08A52BE7B4B700A715E5 /* AppTabView.swift in Sources */,
 				468E22112BD16FA500F0C606 /* ItemView.swift in Sources */,
 				468E21D42BD163C800F0C606 /* ChebuStoreApp.swift in Sources */,
+				467600232BF54B2800368A7E /* CustomViewDidLoad.swift in Sources */,
 				464E08AD2BE7BA4B00A715E5 /* CartScreenView.swift in Sources */,
 				464E08A12BE7ACF600A715E5 /* AdSliderView.swift in Sources */,
 				468E22092BD1660500F0C606 /* ItemsView.swift in Sources */,

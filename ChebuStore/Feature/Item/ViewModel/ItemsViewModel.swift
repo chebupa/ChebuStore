@@ -7,6 +7,20 @@
 
 import Foundation
 import Observation
+import SwiftUI
 
 @Observable
-final class ItemsViewModel {}
+public final class ItemsViewModel {
+	
+	let columns: [GridItem]
+	var searchText: String
+	var qrScannerIsShown: Bool
+	var navPath: NavigationPath
+	
+	init(columns: [GridItem] = [GridItem(), GridItem()], searchText: String = "", qrScannerIsShown: Bool = false, navPath: NavigationPath = NavigationPath()) {
+		self.columns = columns
+		self.searchText = searchText
+		self.qrScannerIsShown = qrScannerIsShown
+		self.navPath = navPath
+	}
+}
