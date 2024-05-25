@@ -15,36 +15,15 @@ struct ItemsView: View {
     var body: some View {
 		NavigationStack(path: $VM.navPath) {
 			GeometryReader { proxy in
-				let size = proxy.size
+				let size: CGSize = proxy.size
 				
 				ScrollView {
 					AdSliderView(size: size)
 					
 					LazyVGrid(columns: VM.columns, spacing: 10) {
-						ItemView(item: ItemModel(itemName: "Chebupa",
-												 itemPrice: 990,
-												 itemImage: "chebupaImage"),
-								 size: size)
-						ItemView(item: ItemModel(itemName: "iPhone 14 Pro",
-												 itemPrice: 990,
-												 itemImage: "iphone14proImage"),
-								 size: size)
-						ItemView(item: ItemModel(itemName: "iPhone 14 Pro",
-												 itemPrice: 990,
-												 itemImage: "iphone14proImage"),
-								 size: size)
-						ItemView(item: ItemModel(itemName: "iPhone 14 Pro",
-												 itemPrice: 990,
-												 itemImage: "iphone14proImage"),
-								 size: size)
-						ItemView(item: ItemModel(itemName: "iPhone 14 Pro",
-												 itemPrice: 990,
-												 itemImage: "iphone14proImage"),
-								 size: size)
-						ItemView(item: ItemModel(itemName: "Chebupa",
-												 itemPrice: 990,
-												 itemImage: "chebupaImage"),
-								 size: size)
+						ForEach(try! VM.getItems()) { item in
+							ItemView(item: item, size: size)
+						}
 					}
 					.padding()
 				}
@@ -67,8 +46,7 @@ struct ItemsView: View {
 				BottomBarContainer(mainContent: ItemDetailView(item: selection.self),
 								   bottomContent: BottomButtonView(text: "Add to cart",
 																   image: "cart",
-																   action: { print("") }
-																  ))
+																   action: { print("") }))
 			}
 		}
 		.environment(VM)

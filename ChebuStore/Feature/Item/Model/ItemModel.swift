@@ -7,10 +7,16 @@
 
 import Foundation
 
-struct ItemModel: Hashable {
+struct ItemsMockDataModel: Decodable {
+	
+	let items: [ItemModel]
+}
+
+struct ItemModel: Decodable, Hashable, Identifiable {
+	
+	let id: Int
 	
 	let itemName: String
 	let itemPrice: Int
-	
 	let itemImage: String
 }

@@ -50,8 +50,8 @@ struct ItemDetailView: View {
     }
 }
 
-#Preview {
-	ItemDetailView(item: ItemModel(itemName: "iPhone 14 Pro",
-								   itemPrice: 990,
-								   itemImage: "chebupaImage"))
-}
+//#Preview {
+//	ItemDetailView(item: ItemModel(itemName: "iPhone 14 Pro",
+//								   itemPrice: 990,
+//								   itemImage: "chebupaImage"))
+//}

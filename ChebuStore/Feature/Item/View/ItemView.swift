@@ -40,16 +40,16 @@ struct ItemView: View {
 	}
 }
 
-#Preview {
-	GeometryReader { proxy in
-		let size = proxy.size
-		
-		ItemView(item: ItemModel(itemName: "iPhone 14 Pro",
-								 itemPrice: 990,
-								 itemImage: "iphone14proImage"),
-				 size: size)
-	}
-}
+//#Preview {
+//	GeometryReader { proxy in
+//		let size = proxy.size
+//		
+//		ItemView(item: ItemModel(itemName: "iPhone 14 Pro",
+//								 itemPrice: 990,
+//								 itemImage: "iphone14proImage"),
+//				 size: size)
+//	}
+//}
 
 // MARK: - PhotoTabView
 struct PhotoTabView: View {
