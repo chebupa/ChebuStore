@@ -17,7 +17,8 @@ public enum SideBarPosition {
 // View
 struct SideBarView<SideContent: View, MainContent: View>: View {
 	
-	public var sideBarPosition: SideBarPosition
+	public var position: SideBarPosition
+	public var color: Color
 	public var sideContent: SideContent
 	@ViewBuilder public var mainContent: () -> MainContent
 	
@@ -29,23 +30,22 @@ struct SideBarView<SideContent: View, MainContent: View>: View {
 				Rectangle()
 					.frame(width: 270, height: .infinity)
 					.ignoresSafeArea()
-					.foregroundStyle(.blue)
+					.foregroundStyle(color)
 					.overlay {
 						sideContent
 					}
 			}
 			.frame(maxWidth: .infinity,
 				   maxHeight: .infinity,
-				   alignment: sideBarPosition == .left ? .leading : .trailing)
-			.background(.blue)
+				   alignment: position == .left ? .leading : .trailing)
+			.background(color)
 			
 			VStack {
 				mainContent()
 					.allowsHitTesting(mainContentOffsetX == 270 ? false : true)
 			}
 			.frame(maxWidth: .infinity, maxHeight: .infinity)
-			.background(.red)
-			.offset(x: sideBarPosition == .left ? mainContentOffsetX : -mainContentOffsetX)
+			.offset(x: position == .left ? mainContentOffsetX : -mainContentOffsetX)
 			.onTapGesture {
 				withAnimation(.smooth) {
 					mainContentOffsetX = 0
@@ -58,14 +58,14 @@ struct SideBarView<SideContent: View, MainContent: View>: View {
 						// left
 						if value.translation.width < 10 {
 							withAnimation(.smooth) {
-								mainContentOffsetX = sideBarPosition == .left ? 0 : 275
+								mainContentOffsetX = position == .left ? 0 : 275
 							}
 						}
 						
 						// right
 						if value.translation.width > 50 {
 							withAnimation(.smooth) {
-								mainContentOffsetX = sideBarPosition == .left ? 275 : 0
+								mainContentOffsetX = position == .left ? 275 : 0
 							}
 						}
 					})
@@ -76,7 +76,7 @@ struct SideBarView<SideContent: View, MainContent: View>: View {
 }
 
 #Preview {
-	SideBarView(sideBarPosition: .left, sideContent: Text("test")) {
+	SideBarView(position: .left, color: .blue, sideContent: Text("test")) {
 		TabView {
 			ItemsView()
 		}
