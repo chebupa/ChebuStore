@@ -31,7 +31,7 @@ public final class ItemsViewModel {
 		case decodingFailed
 	}
 	
-	public func getItems() throws -> [ItemModel] {
+	internal func getItems() throws -> [ItemModel] {
 		
 		guard let sourceURL = Bundle.main.url(forResource: "itemsMockData", withExtension: "json") else {
 			throw ItemsViewModelErrors.decodingFailed

@@ -31,6 +31,8 @@
 		468E22112BD16FA500F0C606 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E22102BD16FA500F0C606 /* ItemView.swift */; };
 		468E22132BD19CE000F0C606 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E22122BD19CE000F0C606 /* ItemDetailView.swift */; };
 		468E22152BD1A63700F0C606 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468E22142BD1A63700F0C606 /* ItemModel.swift */; };
+		46F473202C034DAF00FC7E36 /* SideBarTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F4731F2C034DAF00FC7E36 /* SideBarTabs.swift */; };
+		46F473242C03554E00FC7E36 /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F473232C03554E00FC7E36 /* SideBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		468E22102BD16FA500F0C606 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		468E22122BD19CE000F0C606 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		468E22142BD1A63700F0C606 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		46F4731F2C034DAF00FC7E36 /* SideBarTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarTabs.swift; sourceTree = "<group>"; };
+		46F473232C03554E00FC7E36 /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +334,7 @@
 			children = (
 				464E08B52BE7C4EE00A715E5 /* QRScannerView.swift */,
 				4676001F2BF5494800368A7E /* BottomBarContainer.swift */,
+				46F4731E2C034D9300FC7E36 /* SideBar */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -370,6 +375,15 @@
 				468E220A2BD1661700F0C606 /* ItemsViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		46F4731E2C034D9300FC7E36 /* SideBar */ = {
+			isa = PBXGroup;
+			children = (
+				46F4731F2C034DAF00FC7E36 /* SideBarTabs.swift */,
+				46F473232C03554E00FC7E36 /* SideBarView.swift */,
+			);
+			path = SideBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -507,12 +521,14 @@
 				468E22152BD1A63700F0C606 /* ItemModel.swift in Sources */,
 				468E220D2BD16C0700F0C606 /* Documentation.docc in Sources */,
 				468E21D62BD163C800F0C606 /* ContentView.swift in Sources */,
+				46F473202C034DAF00FC7E36 /* SideBarTabs.swift in Sources */,
 				464E08B32BE7BCD000A715E5 /* ShopMapScreenView.swift in Sources */,
 				468E21D82BD163C800F0C606 /* Item.swift in Sources */,
 				464E08B62BE7C4EE00A715E5 /* QRScannerView.swift in Sources */,
 				468E22132BD19CE000F0C606 /* ItemDetailView.swift in Sources */,
 				467600202BF5494800368A7E /* BottomBarContainer.swift in Sources */,
 				464E08A72BE7B4FE00A715E5 /* TabViewRouter.swift in Sources */,
+				46F473242C03554E00FC7E36 /* SideBarView.swift in Sources */,
 				464E08A52BE7B4B700A715E5 /* AppTabView.swift in Sources */,
 				468E22112BD16FA500F0C606 /* ItemView.swift in Sources */,
 				468E21D42BD163C800F0C606 /* ChebuStoreApp.swift in Sources */,
