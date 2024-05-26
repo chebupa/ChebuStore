@@ -34,7 +34,9 @@ struct SideBarView<SideContent: View, MainContent: View>: View {
 						sideContent
 					}
 			}
-			.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+			.frame(maxWidth: .infinity,
+				   maxHeight: .infinity,
+				   alignment: sideBarPosition == .left ? .leading : .trailing)
 			.background(.blue)
 			
 			VStack {
@@ -44,6 +46,11 @@ struct SideBarView<SideContent: View, MainContent: View>: View {
 			.frame(maxWidth: .infinity, maxHeight: .infinity)
 			.background(.red)
 			.offset(x: sideBarPosition == .left ? mainContentOffsetX : -mainContentOffsetX)
+			.onTapGesture {
+				withAnimation(.smooth) {
+					mainContentOffsetX = 0
+				}
+			}
 			.gesture(
 				DragGesture(minimumDistance: 3.0, coordinateSpace: .local)
 					.onChanged({ value in
@@ -68,15 +75,8 @@ struct SideBarView<SideContent: View, MainContent: View>: View {
     }
 }
 
-// Preview
-struct SomeView: View {
-	var body: some View {
-		Text("asd")
-	}
-}
-
 #Preview {
-	SideBarView(sideBarPosition: .left, sideContent: SomeView()) {
+	SideBarView(sideBarPosition: .left, sideContent: Text("test")) {
 		TabView {
 			ItemsView()
 		}
