@@ -12,7 +12,9 @@ struct ContentView: View {
 	@State private var selection: TabViewRouter?
 	
 	var body: some View {
-		AppTabView(tabViewSelection: $selection)
+//		AppTabView(tabViewSelection: $selection)
+		
+		TestSideBarView()
 	}
 }
 

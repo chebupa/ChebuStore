@@ -23,6 +23,7 @@ struct SideBarView<SideContent: View, MainContent: View>: View {
 	@ViewBuilder public var mainContent: () -> MainContent
 	
 	@State private var mainContentOffsetX: CGFloat = 0
+	private let openedSidebarOffset: CGFloat = UIScreen.screenWidth * 0.6
 	
 	var body: some View {
 		ZStack {
@@ -33,6 +34,10 @@ struct SideBarView<SideContent: View, MainContent: View>: View {
 					.foregroundStyle(color)
 					.overlay {
 						sideContent
+							.rotation3DEffect(.degrees(mainContentOffsetX / 14),
+											  axis: (x: 0, y: 1, z: 0))
+							.scaleEffect(x: mainContentOffsetX / 200,
+										 y: mainContentOffsetX / 200)
 					}
 			}
 			.frame(maxWidth: .infinity,
@@ -42,8 +47,10 @@ struct SideBarView<SideContent: View, MainContent: View>: View {
 			
 			VStack {
 				mainContent()
-					.allowsHitTesting(mainContentOffsetX == 270 ? false : true)
+//					.allowsHitTesting(mainContentOffsetX >= 270 ? false : true)
 			}
+			.zIndex(1)
+//			.blur(radius: mainContentOffsetX >= 270 ? 1 : 0)
 			.frame(maxWidth: .infinity, maxHeight: .infinity)
 			.offset(x: position == .left ? mainContentOffsetX : -mainContentOffsetX)
 			.onTapGesture {
@@ -58,14 +65,14 @@ struct SideBarView<SideContent: View, MainContent: View>: View {
 						// left
 						if value.translation.width < 10 {
 							withAnimation(.smooth) {
-								mainContentOffsetX = position == .left ? 0 : 275
+								mainContentOffsetX = position == .left ? 0 : openedSidebarOffset
 							}
 						}
 						
 						// right
 						if value.translation.width > 50 {
 							withAnimation(.smooth) {
-								mainContentOffsetX = position == .left ? 275 : 0
+								mainContentOffsetX = position == .left ? openedSidebarOffset : 0
 							}
 						}
 					})

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		460612A02BDE765A00ACDF07 /* AccountScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4606129F2BDE765A00ACDF07 /* AccountScreenView.swift */; };
+		46261F172C03A5D8002D5E61 /* TestSideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46261F162C03A5D8002D5E61 /* TestSideBarView.swift */; };
+		46261F192C03B39E002D5E61 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46261F182C03B39E002D5E61 /* UIScreenExtension.swift */; };
 		4629E3262C00AE73002B2725 /* itemsMockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4629E3252C00AE73002B2725 /* itemsMockData.json */; };
 		464E08A12BE7ACF600A715E5 /* AdSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464E08A02BE7ACF600A715E5 /* AdSliderView.swift */; };
 		464E08A52BE7B4B700A715E5 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464E08A42BE7B4B700A715E5 /* AppTabView.swift */; };
@@ -54,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		4606129F2BDE765A00ACDF07 /* AccountScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountScreenView.swift; sourceTree = "<group>"; };
+		46261F162C03A5D8002D5E61 /* TestSideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSideBarView.swift; sourceTree = "<group>"; };
+		46261F182C03B39E002D5E61 /* UIScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
 		4629E3252C00AE73002B2725 /* itemsMockData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = itemsMockData.json; path = ../../../../../../../../Desktop/itemsMockData.json; sourceTree = "<group>"; };
 		464E08A02BE7ACF600A715E5 /* AdSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdSliderView.swift; sourceTree = "<group>"; };
 		464E08A42BE7B4B700A715E5 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
@@ -227,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				467600222BF54B2800368A7E /* CustomViewDidLoad.swift */,
+				46261F182C03B39E002D5E61 /* UIScreenExtension.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -382,6 +387,7 @@
 			children = (
 				46F4731F2C034DAF00FC7E36 /* SideBarTabs.swift */,
 				46F473232C03554E00FC7E36 /* SideBarView.swift */,
+				46261F162C03A5D8002D5E61 /* TestSideBarView.swift */,
 			);
 			path = SideBar;
 			sourceTree = "<group>";
@@ -520,6 +526,7 @@
 				468E220B2BD1661800F0C606 /* ItemsViewModel.swift in Sources */,
 				468E22152BD1A63700F0C606 /* ItemModel.swift in Sources */,
 				468E220D2BD16C0700F0C606 /* Documentation.docc in Sources */,
+				46261F172C03A5D8002D5E61 /* TestSideBarView.swift in Sources */,
 				468E21D62BD163C800F0C606 /* ContentView.swift in Sources */,
 				46F473202C034DAF00FC7E36 /* SideBarTabs.swift in Sources */,
 				464E08B32BE7BCD000A715E5 /* ShopMapScreenView.swift in Sources */,
@@ -529,6 +536,7 @@
 				467600202BF5494800368A7E /* BottomBarContainer.swift in Sources */,
 				464E08A72BE7B4FE00A715E5 /* TabViewRouter.swift in Sources */,
 				46F473242C03554E00FC7E36 /* SideBarView.swift in Sources */,
+				46261F192C03B39E002D5E61 /* UIScreenExtension.swift in Sources */,
 				464E08A52BE7B4B700A715E5 /* AppTabView.swift in Sources */,
 				468E22112BD16FA500F0C606 /* ItemView.swift in Sources */,
 				468E21D42BD163C800F0C606 /* ChebuStoreApp.swift in Sources */,
