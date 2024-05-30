@@ -36,7 +36,6 @@ struct TestSideBarView: View {
 					Label(tab.rawValue, systemImage: tab.imageName)
 				}
 				.frame(maxWidth: .infinity, maxHeight: 30)
-				.padding(.trailing, 30)
 				.bold()
 			}
 		}
